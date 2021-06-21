@@ -1,4 +1,4 @@
-[Please visit my homepage](https://curry30123.github.io/curry30123.gitnub.io/)
+[Please visit my homepage](index.html)
 
 
 # curry30123.gitnub.io
