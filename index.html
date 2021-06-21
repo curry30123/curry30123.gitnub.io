@@ -1,1 +1,56 @@
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>比特幣匯率轉換</title>
+    <script>alert("Hi")</script>
+	</head>
+  <body bgcolor="pink"><!--背景粉紅色-->
+		<div style="color:green">
+			<center><!--置中-->
+					<h2>比特幣轉換美金小工具</h2>
+          <ol>
+            <li>最早推出的虛擬貨幣，透過區塊鏈技</li>
+            <li>區塊鏈技術，主要用來記載交易資料最早推出的虛擬貨幣，透過區塊鏈技</li>
+            <li>取得不易、具稀少性的特性</li>
+        </ol>
+			</center>
+		</div>
+		<center>
+		<div>
+			<label>匯率日期</label>
+			<input id="datetime" type="text"/>
+			<input id="price" type="number" />
+			<label>比特幣</label>
+			<button onclick="exchange()" style="background-color:blue;">轉換</button><!--按鈕藍色-->
+			<label id="result">為     美金</label>
+		
+		  <div style="width: 60%; height: 300px; margin-top: 30px; border: 2px solid yellow;"><!--框框大小和顏色-->
+			<div style="width: 100%; height: 50%; background-color:yellow; display: grid; place-items: center;"><!--框框大小和顏色和位置-->
+				<h4>當前匯率</h4>
+			</div>
+			<div style="width: 100%; height: 50%; place-items: center;"><!--框框大小和位置-->
+				<p id="bitcoin">1比特幣約      美金</p>
+			</div>
+		</div>
+		</div>
+		<center>
+		<script>
+			function exchange() {
+				var quantity = document.querySelector("#price").value;
+				var date = document.querySelector("#datetime").value;
+				var bitcoinprice = document.querySelector("#bitcoin");
+				var total = document.querySelector("#result");
+				if (date.length > 0) {
+					fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${date}&end=${date}`)
+					.then((result) => result.json())
+					.then((resultJson) => {
+						bitcoinprice.innerHTML = `1 比特幣約 ${resultJson.bpi[date]} 美金`;
+						total.innerHTML = `為 ${parseFloat(quantity) * parseFloat(resultJson.bpi[date])} 美金`;})
+					.catch((err) => {
+						console.log(err);
+						alert("查無該日期匯率資料！");});}
+				else {alert("日期格式錯誤！");}
+			}
+		</script>
+	</body>
+</html>
