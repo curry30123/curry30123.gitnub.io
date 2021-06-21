@@ -8,7 +8,7 @@
 * 💞️ I’m looking to collaborate on discussing report.
 * 📫 How to reach me, from facebook.
 
-![aaaa.](C:\Users\moriv\OneDrive\圖片\螢幕擷取畫面/22)
+![aaaa.](http://logos-download.com/wp-content/uploads/2016/04/Golden_State_Warriors_logo_alternative.png)
 
 Nice to meet you!
 
